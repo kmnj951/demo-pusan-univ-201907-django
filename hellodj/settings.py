@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pokemon',
+    'pokemon',  # startapp(폴더 생성) 후 등록하기
 ]
 
 MIDDLEWARE = [
@@ -56,8 +56,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # 'templates'
-            os.path.join(BASE_DIR, 'templates'),
+            # template 경로 넣기
+            # 'templates' 상대경로
+            os.path.join(BASE_DIR, 'templates'),    # 절대 경로  join: \, /
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us'     # 'ko-kr'
 
 TIME_ZONE = 'UTC'
 

@@ -24,12 +24,15 @@ from django.urls import path, include
 def root(request):
     # html = open("index.html", "rt", encoding="utf8").read()
     # return HttpResponse(html)
-    return render(request, 'root.html')
+    # alt + enter - import
+    return render(request, 'root.html')  # request에 요청(user)에 관한 정보 다 저장
+
 
 urlpatterns = [
+    # ( 이 주소로 들어오면, 이 함수를 호출 )
     path('admin/', admin.site.urls),
-    path('pokemon/', include('pokemon.urls')),
-    path('', root),  # 1급 함수를 지원하는 언어이기에 가능
+    path('pokemon/', include('pokemon.urls')),  # pokemon\urls.py
+    path('', root),  # 함수 넘김 ( 1급 함수를 지원하는 언어 )
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
